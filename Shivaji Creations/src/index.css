@@ -1,5 +1,7 @@
 :root{
   --body-background-color : #FFF5E0;
+  --theme-major-color : #141E46;
+  --theme-background-color : #8DECB4;
 }
 
 *{

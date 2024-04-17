@@ -36,7 +36,7 @@ export default function Table() {
     },
     {
       name: "Status",
-      selector: row => row.status
+      cell : row => <button className="finish_order_status"><ion-icon name="checkmark-outline"></ion-icon></button>
     },
   ];
 
@@ -46,56 +46,48 @@ export default function Table() {
       name: "John Doe",
       perticulars: "1p, 2sh",
       date: "10/01/2024",
-      status: "Done"
     },
     {
       orderNumber: 102,
       name: "John",
       perticulars: "1p, 2sh, 1sut",
       date: "12/01/2024",
-      status: "Done"
     },
     {
       orderNumber: 103,
       name: "Doe",
       perticulars: "1jb, 2py",
       date: "10/02/2024",
-      status: "Done"
     },
     {
       orderNumber: 101,
       name: "John Doe",
       perticulars: "1p, 2sh",
       date: "10/03/2024",
-      status: "Done"
     },
     {
       orderNumber: 102,
       name: "John",
       perticulars: "1p, 2sh, 1sut",
       date: "12/03/2024",
-      status: "Done"
     },
     {
       orderNumber: 103,
       name: "Doe",
       perticulars: "1jb, 2py",
       date: "10/04/2024",
-      status: "Done"
     },
     {
       orderNumber: 101,
       name: "John Doe",
       perticulars: "1p, 2sh",
       date: "10/04/2024",
-      status: "Done"
     },
     {
       orderNumber: 102,
       name: "John",
       perticulars: "1p, 2sh, 1sut",
       date: "12/04/2024",
-      status: "Done"
     },
     {
       orderNumber: 103,
@@ -109,21 +101,18 @@ export default function Table() {
       name: "John Doe",
       perticulars: "1p, 2sh",
       date: "10/05/2024",
-      status: "Done"
     },
     {
       orderNumber: 102,
       name: "John",
       perticulars: "1p, 2sh, 1sut",
       date: "12/05/2024",
-      status: "Done"
     },
     {
       orderNumber: 103,
       name: "Doe",
       perticulars: "1jb, 2py",
       date: "10/06/2024",
-      status: "Done"
     },
   ];
 
@@ -148,11 +137,11 @@ export default function Table() {
   return (
     <>
 
-    <input type="text" onChange={e => setSearchText(e.target.value)}/>
+    <input className="search_box" placeholder="Search Customer" type="text" onChange={e => setSearchText(e.target.value)}/>
 
 
       <DataTable columns={columns} data={filteredItems}
-      fixedHeader pagination />
+      fixedHeader pagination highlightOnHover fixedHeaderScrollHeight="500px"/>
     </>
   )
 }
