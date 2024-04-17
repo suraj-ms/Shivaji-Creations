@@ -5,22 +5,13 @@ import { useState } from "react";
 
 export default function Table() {
 
-  const customSort = (rows, field, direction) => {
-    return rows.sort((a, b) => {
-      const dateA = new Date(
-        a[field].split('/').reverse().join('-') // Convert date format to YYYY-MM-DD for consistent comparison
-      );
-      const dateB = new Date(
-        b[field].split('/').reverse().join('-') // Convert date format to YYYY-MM-DD for consistent comparison
-      );
-      if (direction === 'asc') {
-        return dateA - dateB;
-      } else {
-        return dateB - dateA;
-      }
-    });
+  const compareDates = (dateA, dateB) => {
+    const [dayA, monthA, yearA] = dateA.split('/').map(Number);
+    const [dayB, monthB, yearB] = dateB.split('/').map(Number);
+    const dateObjA = new Date(yearA, monthA - 1, dayA);
+    const dateObjB = new Date(yearB, monthB - 1, dayB);
+    return dateObjA - dateObjB;
   };
-  
  
 
   const columns = [
@@ -40,7 +31,8 @@ export default function Table() {
     {
       name: "Date",
       selector: row => row.date,
-      sortable: customSort
+      sortable: true,
+      sortFunction: (a, b) => compareDates(a.date, b.date),
     },
     {
       name: "Status",
