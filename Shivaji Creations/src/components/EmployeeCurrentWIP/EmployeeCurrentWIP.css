@@ -1,0 +1,23 @@
+
+.employee_WIP{
+    width: 20vw;
+    height: 30vh;
+    text-align: center;
+    background-color: white;
+    padding: 20px 30px 20px;
+    border-radius: 10px;
+    
+}
+
+
+
+.employee_WIP ion-icon{
+    color: black;
+    font-size: 2rem;
+}
+
+.edit_employee_WIP{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
