@@ -36,7 +36,7 @@ export default function Table() {
     },
     {
       name: "Status",
-      cell : row => <button className="finish_order_status"><ion-icon name="checkmark-outline"></ion-icon></button>
+      cell : row => <button onClick={() => alert(row.orderNumber)} className="finish_order_status"><ion-icon name="checkmark-outline"></ion-icon></button>
     },
   ];
 
