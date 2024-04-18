@@ -1,5 +1,6 @@
 import './Home.css'
 import DataTable from '../DataTable/Table'
+import {Link} from "react-router-dom";
 
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
   return (
     <>
       <DataTable />
-      <div className="add_user"><ion-icon name="person-add-outline"></ion-icon></div>
+      <Link to="add-user" className="add_user"><ion-icon name="person-add-outline"></ion-icon></Link>
     </>
   )
 }

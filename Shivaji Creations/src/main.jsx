@@ -5,6 +5,7 @@ import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
 import Employee from './components/Employee/Employee.jsx'
+import AddUser from './AddUser/AddUser.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
     <Route path = '/' element={<App/>}>
       <Route path = '' element={<Home/>} />
       <Route path = 'employee' element={<Employee/>} />
+      <Route path = 'add-user' element={<AddUser/>} />
     </Route>
   )
 )
