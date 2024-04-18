@@ -78,7 +78,7 @@ function EmployeeCurrentWIP() {
             <DataTable className='data_table' columns={columns} data={data}
         highlightOnHover noTableHead />
             </span>
-            
+                       
 
         </>
     )
