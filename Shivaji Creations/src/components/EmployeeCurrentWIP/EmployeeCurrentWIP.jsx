@@ -19,6 +19,11 @@ function EmployeeCurrentWIP() {
             cell : row => <button onClick={() => alert(row.orderNumber)} className="edit_employee_WIP"><ion-icon name="create-outline"></ion-icon></button>
           },
 
+          {
+            name: "Action",
+            cell : row => <button onClick={() => alert(row.orderNumber)} className="delete_employee_WIP"><ion-icon name="trash-outline"></ion-icon></button>
+          },
+
 
     ];
 
@@ -67,11 +72,12 @@ function EmployeeCurrentWIP() {
     return (
         <>
 
-            <div className="employee_WIP" style={{ overflowX: 'scroll' }}>
+            <span className="employee_WIP" style={{ overflowX: 'scroll' }}>
+                <span className='add_employee_WIP'><ion-icon name="add-outline"></ion-icon></span>
             <h4>Employee Name</h4>
-            <DataTable columns={columns} data={data}
+            <DataTable className='data_table' columns={columns} data={data}
         highlightOnHover noTableHead />
-            </div>
+            </span>
             
 
         </>
